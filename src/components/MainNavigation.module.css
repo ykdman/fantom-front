@@ -1,0 +1,89 @@
+/* MainNavigation.module.css */
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  max-width: 100%;
+  padding: 20px 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    max-width: 90%;
+  }
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.logo a {
+  display: inline-flex;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+
+.logo h1 {
+  text-decoration: none;
+  color: #365e32;
+}
+
+.logo_image,
+.logo_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  position: relative; /* 상대 위치 지정 */
+}
+
+.search_icon {
+  cursor: pointer;
+  transition: transform 0.3s ease; /* 아이콘 이동 애니메이션 */
+  position: relative; /* 상대 위치 지정 */
+  z-index: 1; /* 검색 아이콘을 검색 입력 위로 설정 */
+}
+
+.search_input {
+  margin-left: 5px; /* 검색 아이콘과의 간격 설정 */
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 0;
+  opacity: 0;
+  transition: width 0.3s ease, opacity 0.3s ease;
+  position: relative; /* 상대 위치 지정 */
+}
+
+.search_input.open {
+  width: 150px; /* 검색창의 너비 */
+  opacity: 1;
+}
+
+.search_icon.open {
+  transform: translateX(-155px); /* 검색 아이콘을 왼쪽으로 이동 */
+}
+
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user_picture {
+  width: 40px;
+  height: 40px;
+  background-color: #ff7f50;
+  border-radius: 50%;
+}
