@@ -7,9 +7,9 @@ import classes from "./MainNavigation.module.css";
 function MainNavigation() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
-  const toggleSearchHandler = () => {
+  function toggleSearchHandler() {
     setIsSearchOpen((prevState) => !prevState);
-  };
+  }
 
   return (
     <header className={classes.header}>
