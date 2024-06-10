@@ -1,48 +1,29 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/react.svg";
 import SearchIcon from "../assets/search_MainNavigation.svg";
-import classes from "./MainNavigation.module.css";
 
 function MainNavigation() {
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-
-  function toggleSearchHandler() {
-    setIsSearchOpen((prevState) => !prevState);
-  }
-
   return (
-    <header className={classes.header}>
-      <section className={classes.logo}>
+    <header className="flex justify-around items-center">
+      <section>
         <Link to="/">
-          <div className={classes.logo_image}>
+          <div>
             <img src={Logo} alt="fantom-logo" />
           </div>
-          <div className={classes.logo_text}>
+          <div>
             <h1>Fantom</h1>
           </div>
         </Link>
       </section>
 
-      <section className={classes.search}>
-        <div
-          className={`${classes.search_icon} ${
-            isSearchOpen ? classes.open : ""
-          }`}
-          onClick={toggleSearchHandler}
-        >
+      <section>
+        <div>
           <img src={SearchIcon} alt="searchIcon" />
         </div>
-        <input
-          type="text"
-          className={`${classes.search_input} ${
-            isSearchOpen ? classes.open : ""
-          }`}
-          placeholder="Search..."
-        />
+        <input type="text" placeholder="Search..." />
       </section>
-      <section className={classes.user}>
-        <div className={classes.user_picture}></div>
+      <section>
+        <div className="w-[40px] h-[40px] bg-[#ff7f50] rounded"></div>
       </section>
     </header>
   );
